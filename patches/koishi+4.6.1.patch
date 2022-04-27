@@ -1,0 +1,13 @@
+diff --git a/node_modules/koishi/lib/index.js b/node_modules/koishi/lib/index.js
+index 526a98c..4bbf35a 100644
+--- a/node_modules/koishi/lib/index.js
++++ b/node_modules/koishi/lib/index.js
+@@ -120,7 +120,7 @@ var Quester;
+     };
+     http.ws = (url, options2 = {}) => {
+       return new import_ws.default(url, __spreadProps(__spreadValues({
+-        agent: getAgent(config.proxyAgent),
++        agent: config.proxyAgent && getAgent(config.proxyAgent),
+         handshakeTimeout: config.timeout
+       }, options2), {
+         headers: __spreadValues(__spreadValues({}, config.headers), options2.headers)

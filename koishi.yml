@@ -1,15 +1,19 @@
 port: 8080
-
 plugins:
-  console:
-    open: true
-  logger:
-  manager:
-  status:
-  sandbox:
-  onebot:
-    bots: []
-  discord:
-    bots: []
-  telegram:
-    bots: []
+  console: null
+  logger: null
+  manager: null
+  status: null
+  sandbox: null
+  adapter-onebot:
+    bots:
+      - selfId: "1993713026"
+        endpoint: ws://${{env.HOST}}:6700
+  database-mysql:
+    host: ${{env.HOST}}
+    port: 3306
+    user: root
+    password: ${{env.MYSQL_PASSWORD}}
+    database: koishi
+  core: null
+  dataview: null

@@ -1,0 +1,12 @@
+diff --git a/node_modules/@koishijs/plugin-manager/lib/index.js b/node_modules/@koishijs/plugin-manager/lib/index.js
+index ebed638..afd084c 100644
+--- a/node_modules/@koishijs/plugin-manager/lib/index.js
++++ b/node_modules/@koishijs/plugin-manager/lib/index.js
+@@ -191,6 +191,7 @@ var BotProvider = class extends import_plugin_console2.DataService {
+       var _a;
+       const name2 = "adapter-" + bot.adapter.platform;
+       const config = this.ctx.loader.config.plugins[name2].bots[bot.adapter.bots.indexOf(bot)];
++      if (!config) return null
+       return __spreadProps(__spreadValues(__spreadValues({}, (0, import_koishi2.pick)(bot, ["platform", "selfId", "avatar", "username", "status"])), (0, import_koishi2.pick)(config, ["disabled", "protocol"])), {
+         config: (0, import_koishi2.omit)(config, ["disabled", "platform", "protocol"]),
+         error: (_a = bot.error) == null ? void 0 : _a.message,
